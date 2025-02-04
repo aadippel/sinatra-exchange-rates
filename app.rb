@@ -61,7 +61,10 @@ get("/:from_currency/:to_currency") do
         @raw_string = @raw_response.to_s
       
         # Convert the string to JSON
-        @exchange_rate = JSON.parse(@raw_string)
+        @parsed_data = JSON.parse(@raw_string)
+         
+        # Extract the exchange rate from the parsed data
+        @exchange_rate = @parsed_data.fetch("result")
   
   erb(:currency_exchange_result)
 end
