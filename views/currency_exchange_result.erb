@@ -1,9 +1,7 @@
-<h1>Convert<%= @from_currency %>to<%= @to_currency %></h1>
+<h1>Convert <%= @original_currency %> to <%= @destination_currency %></h1>
 
-<p>Go<a href="/:currency_from">back</a>.</p>
+<p>Go <a href="/<%= @original_currency %>">back</a>.</p>
 
-<ul>
-    <li>
-    "1 <%= @from_currency %> equals ENV.fetch("EXCHANGE_RATE_KEY")<%= @to_currency %>."
-    </li>
-</ul>
+<p>1 <%= currency_code %> equals <%= currency_code %>.</p>
+
+<p>1 <%= @original_currency %> equals <%= @exchange_rate %> <%= @destination_currency %>.</p>
