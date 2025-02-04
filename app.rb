@@ -2,8 +2,13 @@ require "sinatra"
 require "sinatra/reloader"
 
 get("/") do
-  "
-  <h1>Welcome to your Sinatra App!</h1>
-  <p>Define some routes in app.rb</p>
-  "
+erb(:flexible)
+end
+
+get("/:currency_from") do
+  erb(currency_exchange_start)
+end
+
+get("/:currency_from/:currency_to") do
+  erb(currency_exchange_result)
 end
